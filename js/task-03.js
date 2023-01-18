@@ -14,10 +14,12 @@ const images = [
 ];
 
 const galleryEl = document.querySelector('.gallery');
-
+galleryEl.style.display = 'flex';
+galleryEl.style.listStyle = 'none';
+galleryEl.style.justifyContent = 'space-around';
 const addImages = images
     .map(element => {
-        const image = `<li><img src='${element.url}' width='300px' height='auto' alt='${element.alt}'></li>`;
+        const image = `<li><img src='${element.url}' width='300' height='100%' alt='${element.alt}'></li>`;
         return image;
     })
     .join('');
