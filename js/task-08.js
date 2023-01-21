@@ -15,4 +15,5 @@ formEl.addEventListener('submit', event => {
     userData.email = emailEl;
     userData.password = passwordEl;
     console.log(userData);
+    formEl.reset();
 });
