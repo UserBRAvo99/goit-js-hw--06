@@ -10,17 +10,18 @@ let inputValue = 0;
 inputNumberEl.addEventListener('input', event => {
     inputValue = +event.target.value;
 });
+
 btnCreateEl.addEventListener('click', event => {
     let boxSizeWidth = 0;
     let boxSizeHeigth = 0;
+    let markup = '';
     for (let i = 1; i <= inputValue; i += 1) {
-        divBoxCreate.insertAdjacentHTML(
-            'beforeend',
-            `<span style="background-color: ${getRandomHexColor()}; display: block;
-    width: ${(boxSizeWidth += 30)}px; height: ${(boxSizeHeigth += 30)}px; "></span>`
-        );
+        markup += `<span style="background-color: ${getRandomHexColor()}; display: block;
+    width: ${(boxSizeWidth += 30)}px; height: ${(boxSizeHeigth += 30)}px; "></span>`;
     }
+    divBoxCreate.insertAdjacentHTML('beforeend', markup);
 });
+
 btnDestroyEl.addEventListener('click', event => {
     divBoxCreate.innerHTML = '';
     document.querySelector('#controls input').value = '';
